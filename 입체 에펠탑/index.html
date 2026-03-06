@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>360 Eiffel View</title>
+
+<style>
+html, body{
+margin:0;
+height:100%;
+overflow:hidden;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* 회전 공간 */
+.scene{
+perspective:1000px;
+}
+
+/* 사진 */
+.photo{
+width:1000px;
+height:600px;
+background:url("qqq.jpg") no-repeat center;
+background-size:cover;
+animation:spin 20s linear infinite;
+transform-style:preserve-3d;
+border-radius:10px;
+box-shadow:0 0 40px rgba(0,0,0,0.8);
+}
+
+/* 회전 */
+@keyframes spin{
+0%{transform:rotateY(0deg);}
+100%{transform:rotateY(360deg);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+<div class="photo"></div>
+</div>
+
+</body>
+</html>
